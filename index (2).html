@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="images/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#000000">
+		<meta name="discription" content="Web site created using create-react-app">
+		<meta name="keywords" content="HTML,CSS,JavaScript">
+  		<meta name="author" content="Zaid Khalid">
+  		<link rel="stylesheet" href="#" />
+		<title>GISTelier</title>
+		<link rel="stylesheet" href="style/CSS/style2.css" />
+		<link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+      	<script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	</head>
+	<body style="margin: 0;">
+		<div id="app">
+			<header id="appbar">
+				<div style="display: block; width: 100%;">
+					<div id= "menubar">
+						<span class="project">
+							<button onclick="prj_list()" class="prjbtn">PROJECT</button>
+						  	<div id="projitems" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="edit_list()" class="prjbtn">EDIT</button>
+						  	<div id="edit" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="view_list()" class="prjbtn">VIEW</button>
+						  	<div id="view" class="project-content">
+							    <a href="#">Item 1</a>
+					 		    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="layer_list()" class="prjbtn">LAYER</button>
+						  	<div id="layer" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="setting_list()" class="prjbtn">SETTINGS</button>
+						  	<div id="setting" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="plugin_list()" class="prjbtn">PLUGIN</button>
+						  	<div id="plugin" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="vector_list()" class="prjbtn">VECTOR</button>
+						  	<div id="vector" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="raster_list()" class="prjbtn">RASTER</button>
+						  	<div id="raster" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="database_list()" class="prjbtn">DATABASE</button>
+						  	<div id="database" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="web_list()" class="prjbtn">WEB</button>
+						  	<div id="web" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="processing_list()" class="prjbtn">PROCESSING</button>
+						  	<div id="processing" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+						<span class="project">
+							<button onclick="help_list()" class="prjbtn">HELP</button>
+						  	<div id="help" class="project-content">
+							    <a href="#">Item 1</a>
+							    <a href="#">Item 2</a>
+							    <a href="#">Item 3</a>
+						  	</div>
+						</span>
+					</div>
+				</div>
+				<hr class="divider">
+				<div id="toolbar">
+					<div class="toolgroup">
+						<button class="tool" style="cursor: pointer;">
+							<img src="images/newproject.png">
+						</button>
+						<button class="tool">
+							<img src="images/openfile.png">
+						</button>
+						<button class="tool">
+							<img src="images/saveas.png">
+						</button>
+						<button class="tool">
+							<img src="images/save.png">
+						</button>		
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/pan.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomin.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomout.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomextent.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomselection.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomlayer.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomregion.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomlast.png">
+						</button>
+						<button class="tool">
+							<img src="images/zoomnext.png">
+						</button>
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/redraw.png">
+						</button>
+						<button class="tool">
+							<img src="images/undo.png">
+						</button>
+						<button class="tool">
+							<img src="images/redo.png">
+						</button>
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/select.png">
+						</button>
+						<button class="tool">
+							<img src="images/unselect.png">
+						</button>
+						<button class="tool">
+							<img src="images/selectinvert.png">
+						</button>
+						<button class="tool">
+							<img src="images/deleteselection.png">
+						</button>
+						<button class="tool">
+							<img src="images/measure.png">
+						</button>
+						<button class="tool">
+							<img src="images/table.png">
+						</button>
+						<button class="tool">
+							<img src="images/calculator.png">
+						</button>
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/modelBuilder.png">
+						</button>
+						<button class="tool">
+							<img src="images/python.png">
+						</button>
+						<button class="tool">
+							<img src="images/tools.png">
+						</button>
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/print.png">
+						</button>
+						<button class="tool">
+							<img src="images/help.png">
+						</button>
+						<button class="tool">
+							<img src="images/setting.png">
+						</button>	
+					</div>
+				<hr class="divider">
+				<div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/layerdb.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerdbadd.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerdbcreate.png">
+						</button>
+						<button class="tool">
+							<img src="images/createquerylayer.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerdbexport.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerdbimport.png">
+						</button>
+					</div>
+					<div class="toolgroup">
+						<button class="tool">
+							<img src="images/layeradd.png">
+						</button>
+						<button class="tool">
+							<img src="images/layercreate.png">
+						</button>
+						<button class="tool">
+							<img src="images/layeredit.png">
+						</button><button class="tool">
+							<img src="images/layerexport.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerimport.png">
+						</button>
+						<button class="tool">
+							<img src="images/layerremove.png">
+						</button><button class="tool">
+							<img src="images/layeropacityincrease.png">
+						</button>
+						<button class="tool">
+							<img src="images/layeropacitydecrease.png">
+						</button>
+					</div>
+				</div>
+				<hr class="divider">
+			</header>
+			<div id="toc_container">
+				<ul class="toc_list">
+					<div class="toc_items">
+				  		<span>All mail</span>
+				  	</div>
+					<div class="toc_items">
+						<span href="#First_Point_Header">Trash</span>
+					</div>
+					<div class="toc_items">
+						<span href="#First_Point_Header">Spam</span>
+					</div>
+				</ul>
+			</div>
+			<div id="mapid"></div>
+		</div>
+	<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function  prj_list() {
+	  document.getElementById("projitems").classList.toggle("show");
+	}
+	function edit_list() {
+	  document.getElementById("edit").classList.toggle("show");
+	}
+	function view_list() {
+	  document.getElementById("view").classList.toggle("show");
+	}
+	function layer_list() {
+	  document.getElementById("layer").classList.toggle("show");
+	}
+	function setting_list() {
+	  document.getElementById("setting").classList.toggle("show");
+	}
+	function plugin_list() {
+	  document.getElementById("plugin").classList.toggle("show");
+	}
+	function vector_list() {
+	  document.getElementById("vector").classList.toggle("show");
+	}
+	function raster_list() {
+	  document.getElementById("raster").classList.toggle("show");
+	}
+	function database_list() {
+	  document.getElementById("database").classList.toggle("show");
+	}
+	function web_list() {
+	  document.getElementById("web").classList.toggle("show");
+	}
+	function processing_list() {
+	  document.getElementById("processing").classList.toggle("show");
+	}
+	function help_list() {
+	  document.getElementById("help").classList.toggle("show");
+	}
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.prjbtn')) {
+	    var dropdowns = document.getElementsByClassName("project-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	</script>
+	<script>
+         // Creating map options
+         var mapOptions = {
+            center: [33.6844, 73.0479],
+            zoom: 12
+         }
+         
+         // Creating a map object
+         var map = new L.map('mapid', mapOptions);
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         
+         // Adding layer to the map
+         map.addLayer(layer);
+      </script>
+	</body>
+</html>
+
